@@ -28,6 +28,7 @@ db.once('open', () => console.log("💾 Connected to the database"))
 app.use(express.urlencoded({ extended: true }))
 app.use(methodOverride('_method'))
 app.use(express.json())
+
 app.use(session({
   secret: "deftones",
   saveUninitialied: true,

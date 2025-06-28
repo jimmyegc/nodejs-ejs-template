@@ -24,6 +24,13 @@
     <button type="submit">Crear Usuario</button>
   </form>
 
+  <% if (message) { %>
+    <div style="background-color: red; color: white">
+      <h2><%= message.type %></h2>
+      <p><%= message.message %></p>
+    </div>
+  <% } %>
+
   <table border="1" cellpadding="10">
     <thead>
       <tr>

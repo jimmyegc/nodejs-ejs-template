@@ -25,11 +25,24 @@ router.get('/', async (req, res) => {
 
 // POST new user
 router.post('/', upload, async (req, res) => {
-  const { name, email, phone } = req.body
-  const image = req.file ? req.file.filename : null
-  await User.create({ name, email, phone, image })  
-  res.redirect('/users')
-})
+  try {
+    const { name, email, phone } = req.body;
+    const image = req.file ? req.file.filename : null;
+
+    const user = new User({ name, email, phone, image });
+
+    await user.save(); // <- usa await aquí
+
+    req.session.message = {
+      type: 'success',
+      message: "User added successfully!"
+    };
+
+    res.redirect('/users');
+  } catch (err) {
+    res.json({ message: err.message, type: 'danger' });
+  }
+});
 
 router.get('/add', (req, res) => {
   res.send('add_user', { title: "Add Users" })
