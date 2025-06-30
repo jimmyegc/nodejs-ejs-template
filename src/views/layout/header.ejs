@@ -1,13 +1,20 @@
-<nav>
-  <ul>
-    <li>
-      <a href="#">Home</a>
-    </li>
-    <li>
-      <a href="#">Users</a>
-    </li>
-    <li>
-      <a href="#">Contact</a>
-    </li>
-  </ul>
+<!-- views/partials/navbar.ejs -->
+<nav class="bg-white shadow-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between h-16 items-center">
+      <!-- Logotipo -->
+      <div class="flex-shrink-0">
+        <a href="/" class="text-xl font-bold text-blue-600 hover:text-blue-800">
+          MiSitio
+        </a>
+      </div>
+
+      <!-- Menú -->
+      <div class="hidden md:flex space-x-6">
+        <!-- <a href="/users/new" class="text-gray-700 hover:text-blue-600 transition">Nuevo Usuario</a> -->
+        <a href="/acerca" class="text-gray-700 hover:text-blue-600 transition">Acerca de</a>
+        <a href="/contacto" class="text-gray-700 hover:text-blue-600 transition">Contacto</a>
+      </div>
+    </div>
+  </div>
 </nav>
